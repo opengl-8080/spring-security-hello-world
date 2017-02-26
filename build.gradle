@@ -1,0 +1,16 @@
+apply plugin: 'war'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.security:spring-security-web:4.2.1.RELEASE'
+    compile 'org.springframework.security:spring-security-config:4.2.1.RELEASE'
+}
+
+war.baseName = 'spring-security'
