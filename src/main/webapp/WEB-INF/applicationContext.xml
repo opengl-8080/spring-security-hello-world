@@ -8,19 +8,27 @@
          http://www.springframework.org/schema/security
          http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <sec:http>
-        <sec:intercept-url pattern="/login" access="permitAll" />
-        <sec:intercept-url pattern="/**" access="isAuthenticated() and hasAuthority('BAR')" />
-        <sec:form-login />
-        <sec:logout />
-    </sec:http>
-    
-    <sec:authentication-manager>
-        <sec:authentication-provider>
-            <sec:user-service>
-                <sec:user name="foo" password="foo" authorities="" />
-                <sec:user name="bar" password="bar" authorities="BAR" />
-            </sec:user-service>
-        </sec:authentication-provider>
-    </sec:authentication-manager>
+  <sec:http>
+    <sec:intercept-url
+            pattern="/login"
+            access="permitAll" />
+    <sec:intercept-url
+            pattern="/**"
+            access="isAuthenticated() and hasAuthority('BAR')" />
+    <sec:form-login />
+    <sec:logout />
+  </sec:http>
+  
+  <sec:authentication-manager>
+    <sec:authentication-provider>
+      <sec:user-service>
+        <sec:user name="foo"
+                  password="foo"
+                  authorities="" />
+        <sec:user name="bar"
+                  password="bar"
+                  authorities="BAR" />
+      </sec:user-service>
+    </sec:authentication-provider>
+  </sec:authentication-manager>
 </beans>
