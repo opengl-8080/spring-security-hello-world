@@ -14,3 +14,7 @@ dependencies {
 }
 
 war.baseName = 'spring-security'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.2.1'
+}
